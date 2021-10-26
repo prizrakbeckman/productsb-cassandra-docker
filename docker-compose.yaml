@@ -1,0 +1,16 @@
+version: '3'
+services:
+  springboot-app:
+    ports:
+      - 8080:8080
+    build:
+      context: .
+      args:
+        JAR_FILE: /reportdock-cassandra-int.jar
+    restart: always
+
+  cassandradb:
+    image: cassandra
+    container_name: product-container
+    ports:
+      - "9042:9042"
