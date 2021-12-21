@@ -36,7 +36,7 @@ public class ProductController {
         return products;
     }
 
-    @PutMapping("/update/products/{id}")
+    @PutMapping("/products/{id}")
     public Product update(@PathVariable(value="id") Integer productId, @RequestBody Product product) {
         Product p = this.productRepository.findById(productId)
                 .orElseThrow(
@@ -48,7 +48,7 @@ public class ProductController {
         return updatedProduct;
     }
 
-    @DeleteMapping("/delete/product/{id}")
+    @DeleteMapping("/product/{id}")
     public ResponseEntity<Void> deleteProduct(@PathVariable(value="id") Integer productId, @RequestBody Product product){
         Product p = this.productRepository.findById(productId)
                 .orElseThrow(
