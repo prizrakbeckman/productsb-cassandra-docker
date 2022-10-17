@@ -31,8 +31,8 @@ jobs:
           java-version: '11'
 
       - name: Build with Maven
-        run: mvn -e -B -V verify    
-      - uses: actions/checkout@v3
-      - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+        run: mvn clean install -DskipTests    
+      #- uses: actions/checkout@v3
+      #- name: Build the Docker image
+      #  run: docker build . --file Dockerfile --tag my-image-name:$(date +%s) 
   
